@@ -1,0 +1,3 @@
+/* Base reset only - see styles/theme.css for the design system */
+* { box-sizing: border-box; }
+body { margin: 0; }

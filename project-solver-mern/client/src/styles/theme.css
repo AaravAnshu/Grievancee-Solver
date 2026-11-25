@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #22303c;
+  --ink-soft: #5b6b71;
+  --kraft: #dcd5c3;
+  --kraft-dark: #cbc2a9;
+  --card: #f7f3e8;
+  --hairline: #b8ae96;
+  --stamp: #8b2e2e;
+  --stamp-soft: #ebd9d5;
+  --verdigris: #3f6e64;
+  --verdigris-soft: #dce6e1;
+  --ochre: #a9762e;
+  --ochre-soft: #efe1c9;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--kraft);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+h1, h2, h3, .serif { font-family: "Fraunces", Georgia, serif; font-weight: 600; }
+
+a { color: inherit; }
+
+input, select, textarea, button { font-family: inherit; }
+
+.ps-input {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  font-size: 14px;
+  color: var(--ink);
+}
+.ps-input:focus {
+  outline: none;
+  border-color: var(--verdigris);
+  box-shadow: 0 0 0 3px var(--verdigris-soft);
+}
+
+.ps-field { margin-bottom: 14px; }
+.ps-field label { display: block; font-size: 12px; color: var(--ink-soft); margin-bottom: 5px; }
+
+.ps-btn {
+  padding: 11px 22px;
+  background: var(--ink);
+  color: var(--card);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+.ps-btn:hover { background: #14202b; }
+.ps-btn:active { transform: scale(0.96); }
+.ps-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.ps-btn-outline {
+  padding: 9px 16px;
+  background: var(--card);
+  color: var(--ink-soft);
+  border: 1px solid var(--hairline);
+  font-size: 12.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.ps-btn-outline:hover { background: var(--ink); color: var(--card); }
+
+.ps-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  padding: 18px 20px 16px;
+  margin-bottom: 16px;
+  box-shadow: 2px 2px 0 var(--hairline);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.ps-card:hover {
+  box-shadow: 5px 5px 0 var(--hairline), 0 10px 24px -10px rgba(34, 48, 60, 0.4);
+  transform: translate(-2px, -2px);
+}
+
+/* Ornamental heading underline - used on section titles */
+.ps-heading { position: relative; padding-bottom: 11px; margin-bottom: 20px; }
+.ps-heading::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 42px; height: 3px; background: var(--verdigris);
+}
+
+/* Small pill button used for chips (demo accounts, sign out, forward) */
+.ps-chip {
+  font-size: 11.5px; padding: 7px 12px; border: 1px solid var(--hairline); background: var(--card);
+  cursor: pointer; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 6px;
+  transition: all 0.15s ease;
+}
+.ps-chip:hover { background: var(--ink); color: var(--card); border-color: var(--ink); transform: translateY(-1px); }
+
+/* Elevated primary action button (replaces flat ps-btn fill for hero actions) */
+.ps-primary-btn {
+  padding: 12px 22px; background: linear-gradient(180deg, #2c3e4c, var(--ink)); color: var(--card); border: none;
+  font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.01em;
+  box-shadow: 0 6px 16px -6px rgba(34, 48, 60, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.ps-primary-btn:hover { box-shadow: 0 8px 20px -6px rgba(34, 48, 60, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1); transform: translateY(-1px); }
+.ps-primary-btn:active { transform: translateY(0) scale(0.97); }
+
+/* Faint ledger-paper dot-grid texture for page backgrounds */
+.ps-dot-grid {
+  background-image: radial-gradient(rgba(184, 174, 150, 0.4) 1px, transparent 1.6px);
+  background-size: 20px 20px;
+}
+
+.ps-login-shell { display: flex; flex-direction: row; min-height: 100vh; }
+@media (max-width: 760px) {
+  .ps-login-shell { flex-direction: column; }
+  .ps-login-illustration { flex-basis: auto !important; padding: 32px 28px !important; }
+  .ps-serif-huge { font-size: 22px !important; }
+}
+.ps-serif-huge { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 28px; line-height: 1.25; }
+
+.ps-tab { transition: margin-right 0.15s ease, background 0.15s ease, color 0.15s ease; }
+.ps-tab:hover { background: var(--card) !important; color: var(--ink) !important; }
+
+.ps-link { cursor: pointer; color: var(--stamp); }
+.ps-link:hover { text-decoration: underline; }
+
+table.ps-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.ps-table th {
+  text-align: left; font-weight: 600; color: var(--ink-soft); font-size: 11px;
+  padding: 7px 8px; border-bottom: 1px solid var(--hairline); text-transform: uppercase; letter-spacing: 0.04em;
+}
+table.ps-table td { padding: 8px; border-bottom: 1px solid var(--hairline); }
+
+@keyframes ps-pulse-kf {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  40% { transform: translate(-50%, -50%) scale(1.35); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+.ps-pulse { animation: ps-pulse-kf 0.6s ease; }
+
+@keyframes ps-toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ps-toast { animation: ps-toast-in 0.25s ease; }
+
+@keyframes ps-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ps-fade-up { animation: ps-fade-up 0.35s ease; }
+
+@keyframes ps-stamp-in {
+  0% { opacity: 0; transform: scale(1.3) rotate(-6deg); }
+  60% { opacity: 1; transform: scale(0.95) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+.ps-stamp-in { animation: ps-stamp-in 0.5s ease; }
+
+.ps-scrollbar::-webkit-scrollbar { height: 6px; width: 6px; }
+.ps-scrollbar::-webkit-scrollbar-thumb { background: var(--hairline); }
